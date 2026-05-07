@@ -3,7 +3,7 @@
 ## 📌 Overview
 
 **NarrativeBench** is a Chinese K-12 essay dataset designed for **automated essay scoring (AES)** and **educational NLP research**.  
-It contains **4,500 student essays** annotated with **multi-dimensional scores and feedback**.
+It contains **4,500 student essays** annotated with **multi-dimensional scores and feedback** (`essay_total_data_4500_260417.xlsx`).
 
 - Language: Chinese (zh)
 - Domain: Primary school narrative writing
