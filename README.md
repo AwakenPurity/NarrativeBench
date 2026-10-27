@@ -23,7 +23,7 @@ To bridge these gaps, we introduce **NarrativeBench**, a multi-trait and feedbac
 
 ## 🤖 Definition of Evaluation Framework
 
-- **Relevance** evaluates the degree of alignment between the essay content and the given prompt. It examines whether the student understands the task requirements and maintains a consistent focus throughout the narrative, thereby ensuring that the response is appropriate and on topic. With respect to content quality.  
+- **Relevance** evaluates the degree of alignment between the essay content and the given prompt. It examines whether the student understands the task requirements and maintains a consistent focus throughout the narrative, thereby ensuring that the response is appropriate and on topic. 
 - **Content** assesses the richness of narrative writing and the quality of word and sentence usage. This dimension emphasises the development of the storyline, the vividness of details, and the depth of emotional expression, reflecting the student’s ability to construct a coherent and engaging narrative arc.
 - **Expression** evaluates language quality and stylistic choices, including sentence fluency, logical coherence in expression, lexical accuracy, and the presence of grammatical or syntactic errors, ensuring that language serves as an effective and refined medium for conveying the student's ideas.
 
