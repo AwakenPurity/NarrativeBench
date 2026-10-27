@@ -1,0 +1,330 @@
+# CROISSANT VALIDATION REPORT
+================================================================================
+## VALIDATION RESULTS
+--------------------------------------------------------------------------------
+Starting validation for file: croissant_NarrativeBench.json
+### JSON Format Validation
+✓
+The file is valid JSON.
+### Croissant Schema Validation
+✓
+The dataset passes Croissant validation.
+### Responsible AI Metadata
+✓
+All required Responsible AI metadata fields are present.
+### Records Generation Test
+✓
+No record sets found to validate.
+## JSON-LD REFERENCE
+================================================================================
+```json
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "dct": "http://purl.org/dc/terms/",
+    "sc": "https://schema.org/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "@base": "cr_base_iri/"
+  },
+  "@type": "sc:Dataset",
+  "cr:conformsTo": "http://mlcommons.org/croissant/1.0",
+  "name": "NarrativeBench",
+  "description": "NarrativeBench is a dataset of 4,500 Chinese student essays with multi-dimensional scoring annotations. Each essay is associated with a homework title, requirement, student title, class ID, essay content, and scores with comments across three dimensions: relevance, content, and expression.",
+  "url": "https://github.com/AwakenPurity/NarrativeBench/tree/main",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "version": "1.0.0",
+  "inLanguage": "zh",
+  "datePublished": "2025-04-26",
+  "citation": "Zheng et al. (2025). NarrativeBench: A Chinese K-12 Essay Scoring Dataset from the Elion System.",
+  "keywords": [
+    "Chinese essay",
+    "automated essay scoring",
+    "natural language processing",
+    "education",
+    "narrative writing"
+  ],
+  "distribution": [
+    {
+      "@type": "sc:FileObject",
+      "@id": "essay-data-file",
+      "name": "essay_total_data_4500_260417.xlsx",
+      "description": "Main dataset file containing 4,500 student essays with scoring annotations",
+      "contentUrl": "https://github.com/AwakenPurity/NarrativeBench/blob/main/essay_total_data_4500_260417.xlsx",
+      "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "c2a2cf8cf282cd1ea6916c1d0a092d17f26397a63b32cb0a15dcb20e6b230a7a"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "essays",
+      "name": "essays",
+      "description": "Student essay records with multi-dimensional scoring",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "essays/hw_title",
+          "name": "hw_title",
+          "description": "The title of the homework assignment",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "essay-data-file"
+            },
+            "extract": {
+              "column": "hw_title"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "essays/hw_requirement",
+          "name": "hw_requirement",
+          "description": "The detailed requirements of the homework assignment",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "essay-data-file"
+            },
+            "extract": {
+              "column": "hw_requirement"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "essays/stu_title",
+          "name": "stu_title",
+          "description": "The title of the student's essay",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "essay-data-file"
+            },
+            "extract": {
+              "column": "stu_title"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "essays/class_id",
+          "name": "class_id",
+          "description": "The class identifier of the student",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "essay-data-file"
+            },
+            "extract": {
+              "column": "class_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "essays/content",
+          "name": "content",
+          "description": "The full text content of the student's essay",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "essay-data-file"
+            },
+            "extract": {
+              "column": "content"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "essays/total_score",
+          "name": "total_score",
+          "description": "The overall score of the essay",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "essay-data-file"
+            },
+            "extract": {
+              "column": "total_score"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "essays/relevance_score",
+          "name": "relevance_score",
+          "description": "Score for relevance to the homework topic and requirements",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "essay-data-file"
+            },
+            "extract": {
+              "column": "relevance_score"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "essays/relevance_comment",
+          "name": "relevance_comment",
+          "description": "Textual comment explaining the relevance score",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "essay-data-file"
+            },
+            "extract": {
+              "column": "relevance_comment"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "essays/content_score",
+          "name": "content_score",
+          "description": "Score for the quality and depth of the essay content",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "essay-data-file"
+            },
+            "extract": {
+              "column": "content_score"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "essays/content_comment",
+          "name": "content_comment",
+          "description": "Textual comment explaining the content score",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "essay-data-file"
+            },
+            "extract": {
+              "column": "content_comment"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "essays/expression_score",
+          "name": "expression_score",
+          "description": "Score for language expression, fluency, and writing style",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "essay-data-file"
+            },
+            "extract": {
+              "column": "expression_score"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "essays/expression_comment",
+          "name": "expression_comment",
+          "description": "Textual comment explaining the expression score",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "essay-data-file"
+            },
+            "extract": {
+              "column": "expression_comment"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "rai:dataCollection": "The dataset is derived from the Elion system, a professional essay collection platform tailored for Chinese K-12 education. Essays were collected from students as part of regular classroom writing assignments.",
+  "rai:dataCollectionType": "Human-generated essays collected from an educational platform for Chinese K-12 students. All student identifying information has been anonymized prior to release.",
+  "rai:dataUseCases": "Automated essay scoring, Chinese NLP, educational AI, writing quality assessment",
+  "rai:dataBiases": "The dataset comprises 4,500 essays covering 14 writing prompts, authored by students in grades 3 to 5. The data reflects the curriculum and writing styles of Chinese primary school education and may not generalize to other grade levels, regions, or writing systems.",
+  "rai:personalSensitiveInformation": "All student personal information has been anonymized. No names or other personally identifiable information are included in the released dataset. Only anonymized class IDs are retained.",
+  "rai:annotationsPerItem": "Each essay was independently evaluated by two of six invited Chinese Language teachers across three dimensions: relevance, content, and expression. Each dimension includes a numeric score and a textual comment.",
+  "rai:annotatorDemographics": "Six professional Chinese Language teachers were invited as annotators. Each essay was independently scored by two teachers to ensure annotation quality and consistency.",
+  "rai:dataLimitations": "The dataset is limited to narrative writing essays from Chinese primary school students in grades 3 to 5, covering 14 specific writing prompts. It may not generalize to other writing genres (e.g., argumentative or expository), other education levels, or other languages. Scoring reflects the judgment of Chinese Language teachers and may carry annotator subjectivity.",
+  "rai:dataSocialImpact": "NarrativeBench can facilitate the development of automated essay scoring systems for Chinese K-12 education, potentially reducing teacher workload and providing timely feedback to students. However, automated scoring systems trained on this data should be used as assistive tools rather than replacements for human judgment, to avoid reinforcing scoring biases or disadvantaging students whose writing styles differ from the training distribution.",
+  "rai:hasSyntheticData": false,
+  "prov:wasDerivedFrom": [
+    {
+      "@id": "https://elion-teacher.aiecnu.cn",
+      "prov:label": "Elion Real Student Composition Tutoring System Collection",
+      "sc:license": "CC-BY 4.0"
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q4929239"
+      },
+      "prov:label": "Raw Student Composition Collection from Elion Tutoring System",
+      "sc:description": "Collected raw Chinese elementary school narrative essays along with contextual metadata (such as prompt topics and essays) from the Elion Intelligent Composition Tutoring System ((https://elion-teacher.aiecnu.cn/)). The data was originally generated by students in authentic classroom and after-school tutoring scenarios.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:SoftwareAgent",
+          "@id": "elion_intelligent_composition_tutoring_system",
+          "prov:label": "Elion Intelligent Composition Tutoring System",
+          "sc:description": "The web-based intelligent tutoring platform that captured and stored raw student essays and interactive session logs during authentic learning activities."
+        },
+        {
+          "@type": "prov:Agent",
+          "@id": "ecnu_research_team",
+          "prov:label": "ECNU Research Team",
+          "sc:description": "The primary research team from East China Normal University responsible for study design, system deployment, and secure data extraction."
+        }
+      ]
+    },
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q5227332"
+      },
+      "prov:label": "Anonymization, Filtering, and Normalization Pipeline",
+      "sc:description": "Performed rigorous data cleaning and privacy protection protocols.\n\nPII Removal (Anonymization): Stripped all Personally Identifiable Information (PII) including student names, school IDs, teacher names, and contact details using regular expression matching and manual spot-checks.\n\nQuality Filtering: Filtered out incomplete submissions, blank essays, non-Chinese text, and spam/meaningless inputs.\n\nFormat Normalization: Standardized text encoding to UTF-8 and structured the output into Parquet/JSON formats compatible with benchmark requirements.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:SoftwareAgent",
+          "@id": "automated_python_data_processing_scripts",
+          "prov:label": "Automated Python Data Processing Scripts",
+          "sc:description": "Custom data-processing scripts executing automated regex filtering, structural parsing, and format conversion."
+        },
+        {
+          "@type": "prov:Agent",
+          "@id": "graduate_student_and_researchers_from_east_china_normal_university_(ecnu)",
+          "prov:label": "Graduate Student and Researchers from East China Normal University (ECNU)",
+          "sc:description": "Human researchers who conducted manual audits, spot-checks, and validation to ensure absolute privacy compliance and data integrity."
+        }
+      ]
+    },
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q109719325"
+      },
+      "prov:label": "Expert Human Annotation",
+      "sc:description": "Conustructed the benchmark annotations through a rigorously designed multi-stage expert annotation protocol.\n1. Independent Evaluation: Six experienced Chinese language teachers independently evaluated each of the 4,500 narrative essays. Each essay was scored on a nine-point scale (0\u20138) across three dimensions (Relevance, Content, and Expression), plus a total score.\n2. Threshold-Based Consensus: For score divergences within an acceptable margin ($\\Delta \\le 1$), the average of the two scores was adopted as the ground truth. For instances with significant discrepancies ($\\Delta > 1$), a senior teacher served as an adjudicator to determine the final consensus label.\n3. Validation: The finalized expert labels served as the gold-standard ground truth for evaluating LLM scoring consistency.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:Agent",
+          "@id": "expert_chinese_language_teachers",
+          "prov:label": "Expert Chinese Language Teachers",
+          "sc:description": "A panel comprising six Chinese language teachers for independent scoring and one senior lead teacher acting as an adjudicator for discrepancy resolution."
+        }
+      ]
+    }
+  ]
+}
+```
