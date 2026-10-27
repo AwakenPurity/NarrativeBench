@@ -2,8 +2,8 @@
 
 # NarrativeBench: Benchmarking Multi-trait Automated Scoring and Feedback Efficacy of Large Language Models for Chinese Narrative Essays
 
-<a href='https://github.com/yxwang19/AlphaContext'><img src='https://img.shields.io/badge/Project-Page-green'></a>
-<a href='paper/AlphaContext.pdf'><img src='https://img.shields.io/badge/Paper-PDF-orange'></a>
+<a href='https://github.com/AwakenPurity/NarrativeBench/'><img src='https://img.shields.io/badge/Project-Page-green'></a>
+<a href='paper/NeurIPS_2026_NarrativeBench_Camera_Ready.pdf'><img src='https://img.shields.io/badge/Paper-PDF-orange'></a>
 
 
 </div>
