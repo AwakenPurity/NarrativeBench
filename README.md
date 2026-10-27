@@ -1,86 +1,48 @@
 <div align="center">
 
-# NarrativeBench: Benchmarking Multi-trait Automated Scoring and Feedback Efficacy of Large Language Models for Chinese Narrative Essays
+# ✨ NarrativeBench: Benchmarking Multi-trait Automated Scoring and Feedback Efficacy of Large Language Models for Chinese Narrative Essays
 
 <a href='https://github.com/AwakenPurity/NarrativeBench/'><img src='https://img.shields.io/badge/Project-Page-green'></a>
 <a href='paper/NeurIPS_2026_NarrativeBench_Camera_Ready.pdf'><img src='https://img.shields.io/badge/Paper-PDF-orange'></a>
-
-
+<img src='paper/1_intro.png' width=900 />
 </div>
-## 📌 Overview
 
-**NarrativeBench** is a Chinese K-12 essay dataset designed for **automated essay scoring (AES)** and **educational NLP research**.  
-It contains **4,500 student essays** annotated with **multi-dimensional scores and feedback** (`essay_total_data_4500_260417.xlsx`).
 
-- Language: Chinese (zh)
-- Domain: Primary school narrative writing
-- Size: 4,500 essays
-- Prompts: 14 writing topics
+ #### 🎉Our paper has been accepted to NeurIPS 2026 !!!
 
----
+## 💭 Abstract
 
-## 📊 Dataset Structure
+Automated scoring and feedback generation for Chinese narrative essays (CNE) represent a critical task in educational measurement. While Large Language Models (LLMs) have demonstrated transformative progress, their potential in CNE evaluation scenarios has yet to be systematically under-explored. Existing essay benchmarks face some challenges: 
+- (1) **Standard Alignment**: The varied complexity of scoring traits and rubrics across different benchmarks makes it difficult to establish a consistent alignment mechanism for heterogeneous evaluation scenarios;
+- (2) **Evaluation Scope**: Current benchmarks only focus on discriminative scoring accuracy for LLMs, yet they lack a systematic framework for assessing the quality of generative feedback.
+- (3) **Prompt Coverage**: There is a lack of CNE datasets that cover both closed-ended and open-ended prompts. These issues have, to some extent, constrained the trust of educators in and their adoption of LLM-based methods for essay assessment.  
 
-Each sample corresponds to one student essay with the following fields:
-
-| Field                | Description                 |
-| -------------------- | --------------------------- |
-| `hw_title`           | Homework title              |
-| `hw_requirement`     | Assignment requirements     |
-| `stu_title`          | Student's essay title       |
-| `class_id`           | Anonymized class identifier |
-| `content`            | Essay content               |
-| `total_score`        | Overall score               |
-| `relevance_score`    | Relevance to prompt         |
-| `relevance_comment`  | Feedback on relevance       |
-| `content_score`      | Content quality             |
-| `content_comment`    | Feedback on content         |
-| `expression_score`   | Language and fluency        |
-| `expression_comment` | Feedback on expression      |
+To bridge these gaps, we introduce **NarrativeBench**, a multi-trait and feedback-oriented evaluation benchmark for CNE. NarrativeBench covers both closed-ended and open-ended writing tasks and consists of 4,500 student essays from grades 3 to 5 across 14 different writing prompts. Finally, we benchmark 10 popular LLMs, revealing that their performance exhibits significant gaps compared to human evaluations and pretrained language models. Through NarrativeBench, we comprehensively assess LLM performance on Chinese narrative essay tasks, thus facilitating LLM progress in Chinese essay data analysis domains.
 
 ---
 
-## 🧠 Annotation Protocol
+## 🤖 Definition of Evaluation Framework
 
-- Annotators: 6 professional Chinese language teachers  
-- Each essay is scored by **2 independent teachers**
-- Evaluation dimensions:
-  - **Relevance** (topic alignment)
-  - **Content** (depth & quality)
-  - **Expression** (fluency & style)
-- Each dimension includes:
-  - Numeric score
-  - Natural language feedback
+- **Relevance** evaluates the degree of alignment between the essay content and the given prompt. It examines whether the student understands the task requirements and maintains a consistent focus throughout the narrative, thereby ensuring that the response is appropriate and on topic. With respect to content quality.  
+- **Content** assesses the richness of narrative writing and the quality of word and sentence usage. This dimension emphasises the development of the storyline, the vividness of details, and the depth of emotional expression, reflecting the student’s ability to construct a coherent and engaging narrative arc.
+- **Expression** evaluates language quality and stylistic choices, including sentence fluency, logical coherence in expression, lexical accuracy, and the presence of grammatical or syntactic errors, ensuring that language serves as an effective and refined medium for conveying the student's ideas.
 
----
+In designing the evaluation protocol for **feedback quality**, we observe that traditional surface-level metrics such as BLEU and ROUGE are not suitable for assessing feedback quality, since instructional feedback is inherently open-ended and may contain multiple valid expressions with low lexical overlap but equivalent semantics.
 
-## 🎯 Use Cases
+In this work, we leverage the strong performance of large language models in pairwise comparison tasks and employ two independent LLMs (DeepSeek-V4-pro and Gemini-3.1-pro) as auxiliary judges to perform all pairwise evaluations. For each dimension, annotators compare `r_model(x_i^j)` with `r_ref(x_i^j)` and assign a ternary preference label:
 
-- Automated Essay Scoring (AES)
-- Cross-prompt generalization evaluation
-- Educational AI systems
-- Feedback generation
-- Chinese NLP benchmarks
+- `S(x_i^j) = 1` if `r_model(x_i^j) ≻ r_ref(x_i^j)`
+- `S(x_i^j) = 0` if `r_model(x_i^j) = r_ref(x_i^j)`
+- `S(x_i^j) = -1` if `r_model(x_i^j) ≺ r_ref(x_i^j)`
+
+where `r_model(x_i^j)` denotes the feedback generated by the model for the `j`-th dimension of the `i`-th essay, and `r_ref(x_i^j)` denotes the corresponding expert-written reference feedback. This comparison follows a unified evaluation guideline, focusing on the accuracy, relevance, and pedagogical usefulness of the feedback. We aggregate the pairwise comparison results across all test samples to compute the overall score for each model under each dimension:
+
+`S_total = (N_win × 1) + (N_tie × 0) + (N_loss × -1)`
 
 ---
 
-## ⚖️ Responsible AI Considerations
+## 📢 Reference
+Jin Wu. "NarrativeBench: Benchmarking Multi-trait Automated Scoring and Feedback Efficacy of Large Language Models for Chinese Narrative Essays", Advances in Neural Information Processing Systems (NeurIPS 2026).
 
-### Data Collection
-
-- Collected from real classroom assignments via an educational platform
-- Fully anonymized (no personal identifiers)
-
-### Potential Bias
-
-- Limited to grades 3–5 Chinese students
-- Focused on narrative writing only
-- May reflect annotator subjectivity
-
-### Limitations
-
-- Not suitable for:
-  - Other languages
-  - Higher education levels
-  - Non-narrative genres (e.g., argumentative)
-
+## Bibtex
+```bibtex
