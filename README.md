@@ -1,5 +1,12 @@
-# NarrativeBench
+<div align="center">
 
+# NarrativeBench: Benchmarking Multi-trait Automated Scoring and Feedback Efficacy of Large Language Models for Chinese Narrative Essays
+
+<a href='https://github.com/yxwang19/AlphaContext'><img src='https://img.shields.io/badge/Project-Page-green'></a>
+<a href='paper/AlphaContext.pdf'><img src='https://img.shields.io/badge/Paper-PDF-orange'></a>
+
+
+</div>
 ## 📌 Overview
 
 **NarrativeBench** is a Chinese K-12 essay dataset designed for **automated essay scoring (AES)** and **educational NLP research**.  
