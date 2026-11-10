@@ -21,14 +21,14 @@ llama-4-scout
 MODELS = {
 
  "gemini_3_1_pro": {
- "base_url": "https://api.deepseek.com/v1",
- "api_key": "sk-a9b70c494a98465b99019e7ce1c13729",
- "model_name": "deepseek-v4-pro",
+ "base_url": "xxx",
+ "api_key": "xxx",
+ "model_name": "xxx",
  },
  "deepseek": {
- "base_url": "https://api.deepseek.com/v1",
- "api_key": "sk-a9b70c494a98465b99019e7ce1c13729",
- "model_name": "deepseek-chat",
+ "base_url": "xxx",
+ "api_key": "xxx",
+ "model_name": "xxx",
  }
 }
 
